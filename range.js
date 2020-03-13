@@ -1,31 +1,20 @@
 /**
 * Scrivere qui il codice dell'esercizio 1 del capitolo 4 di eloquentJS
 **/
-var range = function(start, end){
-    var array=[];
-    counter=start;
-    while(counter<end){
-        array.push(counter);
-        counter++;
+const range = function (start, end, step = 1) {
+    let result = [];
+    for (let i = start; (step > 0) ? (i <= end) : (i >= end); i += step) {
+        result = [...result, i]
     }
-    return array
+    return result
 }
-var somma = function(array){
-    var totale=0;
-    while(array.lenght>0){
-        totale=totale+array.pop();
-    }
-    return totale
-}
-console.log(somma(range(1, 10)))
+console.log(range(2, -20, -2))
 
-/*oppure*/ 
-
-var somma2 = function(array){
-    var totale=0;
-    for(i=0; i<array.lenght ; i++){
-        totale = totale + array[i];
+const sum = function (arr) {
+    let result = 0;
+    for (let i = 0; i < arr.length; i++) {
+        result += arr[i];
     }
-    return totale
+    return result
 }
-console.log(somma2(range(1, 10)))
+console.log(sum(range(2, -20, -2)))
